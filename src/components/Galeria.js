@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import '../assets/css/galeria.css';
 import { AppContext } from './AppContext';
-import Heart from './Heart';
+import { Photo } from './Photo';
 
 export default function Home() {
   const { fotos, setFotos } = useContext(AppContext);
@@ -17,15 +17,7 @@ export default function Home() {
     <div className="galeria grid-columns-5 p-3">
       {/* Recorro un Arreglo de fotos y le asigno el en backgroundImage el valor de src portrait (la propiedad donde sacamos la url de la foto) */}
       {fotos.map((e, i) => (
-        <div
-          key={i}
-          className="foto"
-          style={{ backgroundImage: `url(${e.src.portrait})` }}
-          onClick={() => cambiarCorazon(i)}
-        >
-          <Heart filled={e.liked} />
-          <p>{e.alt}</p>
-        </div>
+        <Photo key={i} onClick={() => cambiarCorazon(i)} photo={e} />
       ))}
     </div>
   );

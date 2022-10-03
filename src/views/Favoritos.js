@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { AppContext } from '../components/AppContext';
-import Heart from '../components/Heart';
+import { Photo } from '../components/Photo';
 
 export default function Favoritos() {
   const { fotos } = useContext(AppContext);
@@ -11,14 +11,7 @@ export default function Favoritos() {
         {fotos
           .filter((e) => e.liked)
           .map((e, i) => (
-            <div
-              key={i}
-              className="foto"
-              style={{ backgroundImage: `url(${e.src.portrait})` }}
-            >
-              <Heart filled={e.liked} />
-              <p>{e.alt}</p>
-            </div>
+            <Photo key={i} photo={e} />
           ))}
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import '../assets/css/galeria.css';
-import { AppContext } from './AppContext';
+import { AppContext } from '../context/AppContext';
 import { Photo } from './Photo';
 
 export default function Home() {

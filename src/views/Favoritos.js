@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { AppContext } from '../components/AppContext';
+import { AppContext } from '../context/AppContext';
 import { Photo } from '../components/Photo';
 
 export default function Favoritos() {

@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import Home from './views/Home';
 import Favoritos from './views/Favoritos';
 import { useEffect, useState } from 'react';
-import { AppContextProvider } from './components/AppContext';
+import { AppContext } from './context/AppContext';
 
 export default function App() {
   const [fotos, setFotos] = useState([]);
@@ -23,7 +23,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <AppContextProvider value={{ fotos, setFotos }}>
+      <AppContext.Provider value={{ fotos, setFotos }}>
         <BrowserRouter>
           <Navbar />
           <Routes>
@@ -31,7 +31,7 @@ export default function App() {
             <Route path="/favoritos" element={<Favoritos />} />
           </Routes>
         </BrowserRouter>
-      </AppContextProvider>
+      </AppContext.Provider>
     </div>
   );
 }
